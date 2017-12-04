@@ -15,6 +15,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
+import javax.swing.JOptionPane;
 /**
  *
  * @author dsola
@@ -489,6 +490,22 @@ public float FinalPrice;
     }//GEN-LAST:event_jButton2MouseExited
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+                if(FirstName.getText().equals("") || FirstName.getText().equals("First Name"))
+                {
+                    JOptionPane.showMessageDialog(null,"Please Write the Data");  
+                }
+        else if(LastName.getText().equals("") || LastName.getText().equals("Last Name"))
+                {
+                     JOptionPane.showMessageDialog(null,"Please Write the Data");  
+                }
+         else if(Email.getText().equals("") || Email.getText().equals("e-mail"))
+                {
+                       JOptionPane.showMessageDialog(null,"Please Write the Data");  
+                }
+         else if(TicketNumber.getText().equals("") || TicketNumber.getText().equals("enter Number of tickets"))
+                {
+                     JOptionPane.showMessageDialog(null,"Please Write the Data");  
+                }
      Firstname1=FirstName.getText();
      LastName1=LastName.getText();
      Email1=  Email.getText();
@@ -507,7 +524,7 @@ public float FinalPrice;
              pst.setString(3,Email.getText());
              int rs2=pst.executeUpdate();
               
-             TimeUnit.SECONDS.sleep(3);
+             TimeUnit.SECONDS.sleep(1);
               String select = "Select * from Customer where FirstName=? and LastName=?";
               PreparedStatement selected = con.prepareStatement(select);
               selected.setString(1,FirstName.getText());
