@@ -506,11 +506,13 @@ public float FinalPrice;
                 {
                      JOptionPane.showMessageDialog(null,"Please Write the Data");  
                 }
+       
+         else{
      Firstname1=FirstName.getText();
      LastName1=LastName.getText();
      Email1=  Email.getText();
      TicketNumber1=  TicketNumber.getText();
-    Date p = new Date();
+     Date p = new Date();
     
      try{
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -586,6 +588,7 @@ public float FinalPrice;
                     con.close();
      }catch(Exception e){
          System.out.println("error");
+     }
      }
     }//GEN-LAST:event_jButton2ActionPerformed
 
