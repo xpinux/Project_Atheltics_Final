@@ -81,7 +81,7 @@ public int counter;
                     System.out.println("error");
             }
 }   
-    public int CapacityCheck(){
+    public boolean CapacityCheck(){
          String arr[] = Match.split(" ",2);
         try{
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -100,10 +100,10 @@ public int counter;
            System.out.println("Error");
         }
           
-         if(counter<capacity)
-                  return 1;
+         if(counter<=capacity)
+                  return true;
          else
-                  return 0;
+                  return false;
     }
     
     /**
@@ -546,7 +546,7 @@ public int counter;
      Email1=  Email.getText();
      TicketNumber1=  TicketNumber.getText();
      Date p = new Date();
-    
+    if(CapacityCheck()){
      try{
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             Connection con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=Project_db;user=sa;password=asdfghjkl12");
@@ -630,6 +630,10 @@ public int counter;
          System.out.println("error");
      }
      }
+       else if(!CapacityCheck())
+                     JOptionPane.showMessageDialog(null,"The Match is full");  
+         }
+                
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btn_HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_HomeMouseClicked
