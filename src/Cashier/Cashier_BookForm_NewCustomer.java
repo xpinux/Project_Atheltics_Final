@@ -37,23 +37,32 @@ public int matchid;
 public int loginid;
 public int StadiumID;
 public float FinalPrice;
-    /**
+public float capacity;
+public int counter;
+
+ /**
      * Creates new form Cashier_Book_Form
      */
     public Cashier_BookForm_NewCustomer(String User,String Match) {
-        
+         String arr[] = Match.split(" ",2);
         this.User1=User;
         this.Match=Match;
         initComponents();
         joinMatchesStadiums();
+        CapacityCheck();
     }
+    
     public void joinMatchesStadiums(){
-            
+           String arr[] = Match.split(" ",2);
+   
+
         try{   
              Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             Connection con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=Project_db;user=sa;password=asdfghjkl12");
-            String sql="Select * from Matches INNER JOIN Stadiums on Matches.Stadium_ID=Stadiums.ID";
+            String sql="Select * from Matches INNER JOIN Stadiums on Matches.Stadium_ID=Stadiums.ID where  Matches.Team_A=? and Matches.team_B=?";
             PreparedStatement pst = con.prepareStatement(sql);
+            pst.setString(1, arr[0].trim());
+            pst.setString(2, arr[1].trim());
             ResultSet rs1=pst.executeQuery();
   
               while(rs1.next())
@@ -71,8 +80,32 @@ public float FinalPrice;
     catch(Exception e){
                     System.out.println("error");
             }
-}
-
+}   
+    public int CapacityCheck(){
+         String arr[] = Match.split(" ",2);
+        try{
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            Connection con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=Project_db;user=sa;password=asdfghjkl12");
+            String sqlcheck="Select Capacity,counter from Matches INNER JOIN Stadiums on Matches.Stadium_ID=Stadiums.ID where  Matches.Team_A=? and Matches.team_B=?";
+            PreparedStatement check = con.prepareStatement(sqlcheck);
+            check.setString(1, arr[0].trim());
+            check.setString(2, arr[1].trim());
+            ResultSet checkrs=check.executeQuery();
+            if(checkrs.next()){
+                capacity=checkrs.getFloat("Capacity");
+                counter=checkrs.getInt("counter");
+                 
+            }
+        }catch(Exception e){
+           System.out.println("Error");
+        }
+          
+         if(counter<capacity)
+                  return 1;
+         else
+                  return 0;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -580,7 +613,14 @@ public float FinalPrice;
                  pst1.setFloat(4,FinalPrice*Integer.parseInt(TicketNumber1));// TODOprice
                  pst1.setInt(5,loginid);
                   int rs6=pst1.executeUpdate();
-             
+                  
+                  
+                     String sqlupdate="UPDATE Matches SET counter= counter +? where Team_A=? and team_b=?";
+                     PreparedStatement psupdate = con.prepareStatement(sqlupdate);
+                     psupdate.setString(1, TicketNumber1);
+                     psupdate.setString(2, Team_A);
+                     psupdate.setString(3, Team_B);
+                     int rs7=psupdate.executeUpdate();
                   Cashier_Printing print = new Cashier_Printing(User1,FirstName.getText(),LastName.getText());
                   print.setVisible(true);
                   setVisible(false);
