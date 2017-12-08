@@ -615,7 +615,7 @@ public int counter;
                   int rs6=pst1.executeUpdate();
                   
                   
-                     String sqlupdate="UPDATE Matches SET counter= counter +? where Team_A=? and team_b=?";
+                     String sqlupdate="UPDATE Matches SET counter= counter +? where Team_A=? and team_B=?";
                      PreparedStatement psupdate = con.prepareStatement(sqlupdate);
                      psupdate.setString(1, TicketNumber1);
                      psupdate.setString(2, Team_A);
