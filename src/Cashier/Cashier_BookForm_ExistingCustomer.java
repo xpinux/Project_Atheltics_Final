@@ -25,6 +25,7 @@ public String Team_A;
 public String Team_B;
 public String Match;
 public String Matches;
+public String RealMatch;
 public String MatchDate;
 public String MatchStadium;
 public String   Firstname1;
@@ -72,9 +73,11 @@ public int counter;
                      Matches=rs1.getString("Team_A") + rs1.getString("team_B");
                     MatchDate=rs1.getString("Date");
                     MatchStadium=rs1.getString("Name");
-                    Match_Name_Label.setText(Matches);
+                    RealMatch=rs1.getString("Team_A") + "_VS_" + rs1.getString("team_B");
+                    RealMatch=RealMatch.replaceAll("\\s", "");
+                    Match_Name_Label.setText(RealMatch);
                     Date_Label.setText(MatchDate);
-                    Stadium_Label.setText(MatchStadium);
+                    Stadium_Label.setText(MatchStadium.trim());
               }
     }
     catch(Exception e){
@@ -263,7 +266,7 @@ public int counter;
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(225, 226, 229));
-        jLabel5.setText(User1);
+        jLabel5.setText(User1.trim());
 
         javax.swing.GroupLayout SidePannelLayout = new javax.swing.GroupLayout(SidePannel);
         SidePannel.setLayout(SidePannelLayout);
@@ -389,7 +392,7 @@ public int counter;
                                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(TicketNumber, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
                                     .addComponent(jSeparator5))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 219, Short.MAX_VALUE))
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(bgLayout.createSequentialGroup()
@@ -400,9 +403,9 @@ public int counter;
                                         .addComponent(FirstName_Label)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                        .addComponent(Date_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(69, 69, 69)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Date_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(32, 32, 32)))
                         .addComponent(Stadium_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(138, 138, 138))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
@@ -439,11 +442,11 @@ public int counter;
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 1027, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 1016, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 562, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 558, Short.MAX_VALUE)
         );
 
         pack();
