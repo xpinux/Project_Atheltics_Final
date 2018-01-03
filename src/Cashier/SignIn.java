@@ -56,6 +56,7 @@ public class SignIn extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Sing In to System");
 
         jPanel1.setBackground(new java.awt.Color(36, 46, 68));
 

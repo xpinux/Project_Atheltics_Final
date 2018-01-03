@@ -84,15 +84,18 @@ public class EditMatch extends javax.swing.JFrame {
         StadiumList = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Editing Match");
 
         Base.setBackground(new java.awt.Color(66, 77, 91));
 
         Date_label.setBackground(new java.awt.Color(54, 63, 75));
         Date_label.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        Date_label.setForeground(new java.awt.Color(0, 153, 51));
         Date_label.setText("Date :");
 
         Stadium_label.setBackground(new java.awt.Color(54, 63, 75));
         Stadium_label.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        Stadium_label.setForeground(new java.awt.Color(0, 153, 51));
         Stadium_label.setText("Stadium :");
 
         jSeparator3.setForeground(new java.awt.Color(255, 255, 255));
@@ -176,7 +179,7 @@ public class EditMatch extends javax.swing.JFrame {
                         .addGap(61, 61, 61)))
                 .addGroup(BaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(BaseLayout.createSequentialGroup()
-                        .addComponent(Stadium_label, javax.swing.GroupLayout.DEFAULT_SIZE, 317, Short.MAX_VALUE)
+                        .addComponent(Stadium_label, javax.swing.GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE)
                         .addGap(122, 122, 122))
                     .addGroup(BaseLayout.createSequentialGroup()
                         .addGap(16, 16, 16)

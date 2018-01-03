@@ -23,6 +23,7 @@ public class Admin_Home extends javax.swing.JFrame {
      * Creates new form Admin_Home
      */
     public Admin_Home() {
+        
         initComponents();
         showDate();
         showTime();
@@ -73,6 +74,7 @@ public class Admin_Home extends javax.swing.JFrame {
         Time_label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Admin Home");
 
         Base.setBackground(new java.awt.Color(241, 239, 241));
 
@@ -96,6 +98,7 @@ public class Admin_Home extends javax.swing.JFrame {
         Update_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GuiPackage/Images/UpdateImage.png"))); // NOI18N
 
         Update_label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Update_label.setForeground(new java.awt.Color(0, 153, 51));
         Update_label.setText("Update");
 
         javax.swing.GroupLayout Update_PannelLayout = new javax.swing.GroupLayout(Update_Pannel);
@@ -135,6 +138,7 @@ public class Admin_Home extends javax.swing.JFrame {
         Statistics_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GuiPackage/Images/StatisticsImage.png"))); // NOI18N
 
         Statistics_label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Statistics_label.setForeground(new java.awt.Color(0, 153, 51));
         Statistics_label.setText("Statistics");
 
         javax.swing.GroupLayout Statistics_PannelLayout = new javax.swing.GroupLayout(Statistics_Pannel);
@@ -206,9 +210,11 @@ public class Admin_Home extends javax.swing.JFrame {
         Title_label.setText("Booking Managment System");
 
         Date_label.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        Date_label.setForeground(new java.awt.Color(0, 153, 51));
         Date_label.setText("Date");
 
         Time_label.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        Time_label.setForeground(new java.awt.Color(0, 153, 51));
         Time_label.setText("Time");
 
         javax.swing.GroupLayout Title_PannelLayout = new javax.swing.GroupLayout(Title_Pannel);
@@ -250,7 +256,7 @@ public class Admin_Home extends javax.swing.JFrame {
             .addComponent(SidePannel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(BaseLayout.createSequentialGroup()
                 .addComponent(Title_Pannel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 399, Short.MAX_VALUE))
+                .addGap(0, 405, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

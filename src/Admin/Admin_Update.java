@@ -80,14 +80,13 @@ String Team2;
         jSeparator1 = new javax.swing.JSeparator();
         Title_Pannel = new javax.swing.JPanel();
         Title_label = new javax.swing.JLabel();
-        Date_label = new javax.swing.JLabel();
-        Time_label = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
         Update_Button = new javax.swing.JButton();
         Addmatch_button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Admin Options");
         setPreferredSize(new java.awt.Dimension(930, 500));
 
         Base.setBackground(new java.awt.Color(241, 239, 241));
@@ -109,6 +108,7 @@ String Team2;
         Update_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GuiPackage/Images/UpdateImage.png"))); // NOI18N
 
         Update_label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Update_label.setForeground(new java.awt.Color(0, 153, 51));
         Update_label.setText("Update");
 
         javax.swing.GroupLayout Update_PannelLayout = new javax.swing.GroupLayout(Update_Pannel);
@@ -148,6 +148,7 @@ String Team2;
         Statistics_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GuiPackage/Images/StatisticsImage.png"))); // NOI18N
 
         Statistics_label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Statistics_label.setForeground(new java.awt.Color(0, 153, 51));
         Statistics_label.setText("Statistics");
 
         javax.swing.GroupLayout Statistics_PannelLayout = new javax.swing.GroupLayout(Statistics_Pannel);
@@ -218,35 +219,20 @@ String Team2;
         Title_label.setForeground(new java.awt.Color(255, 255, 255));
         Title_label.setText("Update Matches");
 
-        Date_label.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
-        Date_label.setText("Date");
-
-        Time_label.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
-        Time_label.setText("Time");
-
         javax.swing.GroupLayout Title_PannelLayout = new javax.swing.GroupLayout(Title_Pannel);
         Title_Pannel.setLayout(Title_PannelLayout);
         Title_PannelLayout.setHorizontalGroup(
             Title_PannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Title_PannelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(Title_PannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Title_label, javax.swing.GroupLayout.PREFERRED_SIZE, 647, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(Title_PannelLayout.createSequentialGroup()
-                        .addComponent(Date_label, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
-                        .addComponent(Time_label, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(Title_label, javax.swing.GroupLayout.PREFERRED_SIZE, 647, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(46, Short.MAX_VALUE))
         );
         Title_PannelLayout.setVerticalGroup(
             Title_PannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Title_PannelLayout.createSequentialGroup()
                 .addComponent(Title_label, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Title_PannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Time_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Date_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         jList1.setBackground(new java.awt.Color(54, 63, 75));
@@ -389,12 +375,10 @@ String Team2;
     }//GEN-LAST:event_Statistics_PannelMouseClicked
 
     private void Addmatch_buttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Addmatch_buttonMouseClicked
-       if(jList1.isSelectionEmpty()){
-             JOptionPane.showMessageDialog(null,"You Must Select Item from List"); 
-        }else{
+    
         AddMatch Window = new AddMatch();
         Window.setVisible(true);
-       }
+       
     }//GEN-LAST:event_Addmatch_buttonMouseClicked
 
     private void Update_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Update_ButtonActionPerformed
@@ -446,13 +430,11 @@ String Team2;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Addmatch_button;
     private javax.swing.JPanel Base;
-    private javax.swing.JLabel Date_label;
     private javax.swing.JLabel Mundial_icon;
     private javax.swing.JPanel SidePannel;
     private javax.swing.JPanel Statistics_Pannel;
     private javax.swing.JLabel Statistics_icon;
     private javax.swing.JLabel Statistics_label;
-    private javax.swing.JLabel Time_label;
     private javax.swing.JPanel Title_Pannel;
     private javax.swing.JLabel Title_label;
     private javax.swing.JButton Update_Button;

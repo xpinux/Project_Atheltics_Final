@@ -25,6 +25,7 @@ public class AddMatch extends javax.swing.JFrame {
      * Creates new form AddMatch
      */
     public AddMatch() {
+        
         initComponents();
         fillListBoxStad();
         fillListBoxTeam_A();
@@ -144,23 +145,28 @@ public class AddMatch extends javax.swing.JFrame {
         StadiumList = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Add Match");
 
         Base.setBackground(new java.awt.Color(66, 77, 91));
 
         TeamA_label.setBackground(new java.awt.Color(54, 63, 75));
         TeamA_label.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        TeamA_label.setForeground(new java.awt.Color(0, 153, 51));
         TeamA_label.setText("Team A :");
 
         TeamB_label.setBackground(new java.awt.Color(54, 63, 75));
         TeamB_label.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        TeamB_label.setForeground(new java.awt.Color(0, 153, 51));
         TeamB_label.setText("Team B :");
 
         Date_label.setBackground(new java.awt.Color(54, 63, 75));
         Date_label.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        Date_label.setForeground(new java.awt.Color(0, 153, 51));
         Date_label.setText("Date :");
 
         Stadium_label.setBackground(new java.awt.Color(54, 63, 75));
         Stadium_label.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        Stadium_label.setForeground(new java.awt.Color(0, 153, 51));
         Stadium_label.setText("Stadium :");
 
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
