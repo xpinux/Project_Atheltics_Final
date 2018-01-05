@@ -18,6 +18,7 @@ import javax.swing.Timer;
  * @author dsola
  */
 public class Admin_Home extends javax.swing.JFrame {
+    String Date;
 
     /**
      * Creates new form Admin_Home
@@ -34,6 +35,11 @@ public class Admin_Home extends javax.swing.JFrame {
        SimpleDateFormat s = new SimpleDateFormat("dd-MM-YYYY");
        Date_label.setText(s.format(d));
    }
+    public String testDate(){
+         Date d = new Date();
+        SimpleDateFormat s = new SimpleDateFormat("dd-MM-YYYY");
+        return  Date=s.format(d);
+    }
    
    void showTime(){
         new Timer(0,new ActionListener() {

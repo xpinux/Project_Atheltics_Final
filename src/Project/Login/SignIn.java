@@ -22,6 +22,9 @@ import javax.swing.JOptionPane;
  * @author dsola
  */
 public class SignIn extends javax.swing.JFrame {
+    String check;
+    String user;
+    String check1;
 
     /**
      * Creates new form SignIn
@@ -255,7 +258,38 @@ public class SignIn extends javax.swing.JFrame {
         jButton2.setBackground(new Color(87,194,193));
         jButton2.setForeground(new Color(255,255,255));
     }//GEN-LAST:event_jButton2MouseExited
-
+    
+    public int testingAction(){
+        try{
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            Connection con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=Project_db;user=sa;password=asdfghjkl12");
+            String sql="Select * from Login where username=? and password = ?";
+            PreparedStatement pst = con.prepareStatement(sql);
+            pst.setString(1,"admin");
+            pst.setString(2,"admin");
+            ResultSet rs=pst.executeQuery();
+            if(rs.next()){
+                   check =rs.getString("username");
+               user=rs.getString("username");
+               check1 ="admin";
+               // System.out.println(check.trim().equals(check1.trim()));
+                        if(check.trim().equals(check1.trim())){
+                            Admin_Home admin = new Admin_Home();
+                              return 1;
+                              //TODO ADMIN
+                
+                
+                
+                          }
+                
+            
+        }
+    }catch(Exception e){
+       System.out.println("error");
+       return 0;
+    }
+     return 2;
+    }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
        try{    
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -266,9 +300,9 @@ public class SignIn extends javax.swing.JFrame {
             pst.setString(2,password.getText());
             ResultSet rs=pst.executeQuery();
             if(rs.next()){
-                String check=rs.getString("username");
-                String user=rs.getString("username");
-                String check1="admin";
+               check =rs.getString("username");
+               user=rs.getString("username");
+               check1 ="admin";
                // System.out.println(check.trim().equals(check1.trim()));
                         if(check.trim().equals(check1.trim())){
                             Admin_Home admin = new Admin_Home();
